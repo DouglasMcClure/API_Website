@@ -60,8 +60,12 @@ def select_all_tasks(conn):
 
 def main():
     file = "capstonedatabase.sqlite"
-    url = "https://data.messari.io/ap/v1/news"
+    url = "https://data.messari.io/api/v1/news"
     res = urllib.request.urlopen(url)
+    res = json.load(res)
+    res = json.dumps(res)
+    with open('DougOutput.json', 'w') as json_file:
+        json_file.write(res)
 
     # create a database connection
     conn = create_connection(file)
