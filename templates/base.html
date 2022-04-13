@@ -10,11 +10,21 @@
 </head>
 <body>
     <nav>
-        <a href="{{ url_for('messario_api') }}">Messario API</a>
-        <a href="{{ url_for('cryptocompare_coin_info') }}">CryptoCompare CoinInfo</a>
-        <a href="{{ url_for('finnhub_candles') }}">Finnhub Candles</a>
-        <a href="{{ url_for('coinlore_coin_market') }}">Coinlore Coin Market</a>
-        <a href="{{ url_for('trade_assets') }}">Trade Assets</a>
+        <div class="navbar">
+            <a href="#home">Home</a>
+            <div class="dropdown">
+                <button class="dropbtn">APIs
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('messario_news') }}">News</a>
+                    <a href="{{ url_for('cryptocompare_coin_info') }}">CoinInfo</a>
+                    <a href="{{ url_for('finnhub_candles') }}">Candles</a>
+                    <a href="{{ url_for('coinlore_coin_market') }}">CoinMarket</a>
+                    <a href="{{ url_for('trade_assets') }}">TradeAssets</a>
+                </div>
+            </div>
+        </div>
     </nav>
     <div class="content">
         {% block content %} {% endblock %}

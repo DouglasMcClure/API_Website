@@ -22,6 +22,7 @@ def messario_news():
     return render_template('news.html', posts=posts)
 
 
+@app.route('/')
 def cryptocompare_coin_info():
     conn = get_db_connection()
     posts = conn.execute('SELECT * FROM cryptocompare_coin_info').fetchall()
@@ -29,6 +30,7 @@ def cryptocompare_coin_info():
     return render_template('coin_info.html', posts=posts)
 
 
+@app.route('/')
 def finnhub_candles():
     conn = get_db_connection()
     posts = conn.execute('SELECT * FROM finnhub_candles').fetchall()
@@ -36,6 +38,7 @@ def finnhub_candles():
     return render_template('candles.html', posts=posts)
 
 
+@app.route('/')
 def coinlore_coin_market():
     conn = get_db_connection()
     posts = conn.execute('SELECT * FROM coinlore_coin_market').fetchall()
@@ -43,6 +46,7 @@ def coinlore_coin_market():
     return render_template('coin_market.html', posts=posts)
 
 
+@app.route('/')
 def trade_assets():
     conn = get_db_connection()
     posts = conn.execute('SELECT * FROM trade_assets').fetchall()
