@@ -18,4 +18,4 @@ def messario_api():
     conn = get_db_connection()
     posts = conn.execute('SELECT * FROM messario_news').fetchall()
     conn.close()
-    return render_template('index.html', posts=posts)
+    return render_template('news.html', posts=posts)
