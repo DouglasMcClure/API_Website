@@ -3,7 +3,6 @@ import sqlite3
 import click
 from flask import Flask, g, render_template, current_app
 from flask.cli import with_appcontext
-
 app = Flask(__name__)
 
 
@@ -15,6 +14,11 @@ def get_db_connection():
 
 # Call/Collect data from all database tables
 @app.route('/')
+def home():
+    return render_template('home.html')
+
+
+@app.route('/news')
 def messario_news():
     conn = get_db_connection()
     posts = conn.execute('SELECT * FROM messario_news').fetchall()
@@ -22,7 +26,7 @@ def messario_news():
     return render_template('news.html', posts=posts)
 
 
-@app.route('/')
+@app.route('/coin_info')
 def cryptocompare_coin_info():
     conn = get_db_connection()
     posts = conn.execute('SELECT * FROM cryptocompare_coin_info').fetchall()
@@ -30,7 +34,7 @@ def cryptocompare_coin_info():
     return render_template('coin_info.html', posts=posts)
 
 
-@app.route('/')
+@app.route('/candles')
 def finnhub_candles():
     conn = get_db_connection()
     posts = conn.execute('SELECT * FROM finnhub_candles').fetchall()
@@ -38,7 +42,7 @@ def finnhub_candles():
     return render_template('candles.html', posts=posts)
 
 
-@app.route('/')
+@app.route('/coin_market')
 def coinlore_coin_market():
     conn = get_db_connection()
     posts = conn.execute('SELECT * FROM coinlore_coin_market').fetchall()
@@ -46,7 +50,7 @@ def coinlore_coin_market():
     return render_template('coin_market.html', posts=posts)
 
 
-@app.route('/')
+@app.route('/assets')
 def trade_assets():
     conn = get_db_connection()
     posts = conn.execute('SELECT * FROM trade_assets').fetchall()

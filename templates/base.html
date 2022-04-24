@@ -5,27 +5,16 @@
 
     <link rel="stylesheet" href="{{ url_for('static', filename= 'css/nav.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename= 'css/news.css') }}">
-
-    <title>{% block title %} {% endblock %}- CRYPTO</title>
+    <title>{% block title %} {% endblock %}</title>
 </head>
-<body>
-    <nav>
-        <div class="navbar">
-            <a href="#home">Home</a>
-            <div class="dropdown">
-                <button class="dropbtn">APIs
-                    <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                    <a href="{{ url_for('messario_news') }}">News</a>
-                    <a href="{{ url_for('cryptocompare_coin_info') }}">CoinInfo</a>
-                    <a href="{{ url_for('finnhub_candles') }}">Candles</a>
-                    <a href="{{ url_for('coinlore_coin_market') }}">CoinMarket</a>
-                    <a href="{{ url_for('trade_assets') }}">TradeAssets</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <div class="navbar">
+        <a class="active" href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('messario_news') }}">News</a><a href="{{ url_for('cryptocompare_coin_info') }}">CoinInfo</a>
+        <a href="{{ url_for('finnhub_candles') }}">Candles</a>
+        <a href="{{ url_for('coinlore_coin_market') }}">CoinMarket</a>
+        <a href="{{ url_for('trade_assets') }}">TradeAssets</a>
+        <
+    </div>
     <div class="content">
         {% block content %} {% endblock %}
     </div>
