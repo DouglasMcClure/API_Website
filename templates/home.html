@@ -1,7 +1,18 @@
 {% extends 'base.html' %}
 
     {% block content %}
-        <div class="nav a">
-        <h1>{% block title %} CryptoMinds {% endblock %}</h1>
+        <div class="hero">
+        <section href="#top">
+            <div class="hcontent">
+                <h1>CryptoMinds</h1>
+                <a id="#my-div" href="#">Explore</a>
+            </div>
+            <!-- The video -->
+            <div class="myVideo">
+                <video autoplay muted playsinline loop class="back-video" poster="{{ url_for('static', filename='/uploads/video.mp4') }}">
+                    <source src="{{ url_for('static', filename='/uploads/video.mp4') }}" type="video/mp4">
+                </video>
+            </div>
+        </section>
         </div>
-{% endblock %}
+    {% endblock %}

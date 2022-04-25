@@ -3,7 +3,19 @@ import sqlite3
 import click
 from flask import Flask, g, render_template, current_app
 from flask.cli import with_appcontext
+from flask_navigation import Navigation
+
 app = Flask(__name__)
+nav = Navigation(app)
+
+nav.Bar('top', [
+    nav.Item('Home', 'home'),
+    nav.Item('News', 'messario_news'),
+    nav.Item('Candles', 'finnhub_candles'),
+    nav.Item('Coin Market', 'coinlore_coin_market'),
+    nav.Item('Trade Assets', 'trade_assets'),
+    nav.Item('Coin Info', 'cryptocompare_coin_info'),
+])
 
 
 def get_db_connection():

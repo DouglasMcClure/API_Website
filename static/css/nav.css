@@ -6,10 +6,10 @@
 }
 
 .navbar a {
-    float: right;
+    float: left;
     font-size: 16px;
     color: #FFD700;
-    text-align: center;
+    text-align: right;
     padding: 14px 16px;
     text-decoration: none;
 }
@@ -19,16 +19,11 @@
     color: black;
 }
 
-active{
-    background-color: #FFD700;
-    color: black;
+.navbar-right{
+    margin-left: auto;
 }
 
-.logo {
-    height: 60px;
-    width: 60px;
-    padding-left: 40px;
-    padding-top: 10px;
-    display: block;
-    text-align: left;
+.navbar-nav > .active > a{
+    background-color: #FFD700;
+    color: black;
 }
