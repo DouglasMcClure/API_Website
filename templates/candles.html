@@ -2,13 +2,12 @@
 
     {% block content %}
         <div class="nav a">
-        <h1>{% block title %} Messario News {% endblock %}</h1>
-        {% for post in posts %}
-            <div class="news">
-            <h2>{{ post['title'] }}</h2>
-            <p>{{ post['content'] }}</p>
-            <h3>{{ post['published_at'] }}</h3>
+        <h1>{% block title %} Crypto Candles {% endblock %}</h1>
+            <div class="chart" id="candlestick">
+                <script>
+                    var graphs = {{plot | safe}};
+                    Plotly.plot('candlestick',graphs,{});
+                </script>
             </div>
-    {% endfor %}
         </div>
 {% endblock %}

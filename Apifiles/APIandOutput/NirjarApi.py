@@ -2,7 +2,7 @@ import finnhub
 import json
 import sqlite3
 from sqlite3 import Error
-
+from datetime import datetime
 
 def create_connection(db_file):
     """ create a database connection to the SQLite database
@@ -35,29 +35,26 @@ def select_all_tasks(conn):
 
     with open('NirjarOutput.json') as json_file:
         data = json.load(json_file)
-        print(type(data))
-        print(data)
         sql1 = 'DROP TABLE IF EXISTS finnhub_candles'
         sql2 = 'CREATE TABLE finnhub_candles (close_price float, high_price float, low_price float, open_price float, ' \
-               'tstamp TIMESTAMP, volume_data float) '
+               'tstamp date, volume_data float) '
         sql3 = 'INSERT OR REPLACE INTO finnhub_candles VALUES (?, ?, ?, ?, ?, ?)'
         cur.execute(sql1)
         cur.execute(sql2)
         i = 0
         for r in data:
             close_price = data['c'][i]
-            print(close_price)
             high_price = data['h'][i]
             low_price = data['l'][i]
             open_price = data['o'][i]
-            timestamp = data['t'][i]
+            timestamp = datetime.fromtimestamp(data['t'][i]).strftime('%d-%m-%y')
+            print(timestamp)
             volume_data = data['v'][i]
             val = (close_price, high_price, low_price, open_price, timestamp, volume_data)
             conn.commit()
             cur.execute(sql3, val)
             conn.commit()
             i=i+1
-
         cur.close()
 
 
