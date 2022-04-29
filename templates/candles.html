@@ -4,10 +4,9 @@
         <div class="nav a">
         <h1>{% block title %} Crypto Candles {% endblock %}</h1>
             <div class="chart" id="candlestick">
-                <script>
-                    var graphs = {{plot | safe}};
-                    Plotly.plot('candlestick',graphs,{});
-                </script>
             </div>
+
+{#            <iframe width="100%" frameborder="0" height="650" src="https://widget.finnhub.io/widgets/stocks/chart?symbol=BINANCE:BTCUSDT&amp;watermarkColor=%231db954&amp;backgroundColor=%23222222&amp;textColor=white">#}
+{#            </iframe>#}
         </div>
 {% endblock %}

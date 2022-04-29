@@ -17,40 +17,7 @@
 "sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
               crossorigin="anonymous" />
     <title>{% block title %} {% endblock %}</title>
-{% for post in posts %}
-    <script type="text/javascript">
-window.onload = function () {
-	var chart = new CanvasJS.Chart("chartContainer",
-	{
-		title:{
-			text: "Basic Candle Stick Chart"
-		},
-		zoomEnabled: true,
-		axisY: {
-			includeZero:false,
-			title: "Prices",
-			prefix: "$ "
-		},
-		axisX: {
-			interval:2,
-			intervalType: "month",
-			valueFormatString: "MMM-YY",
-			labelAngle: -45
-		},
-		data: [
-		{
-			type: "candlestick",
-			dataPoints: [
-				{x: {{ posts['tstamp'] }},y: [{{ posts['open_price'] }}, {{ posts['close_price'] }}, {{ posts['high_price'] }}, {{ posts['low_price'] }}]}
-			]
-		}
-		]
-	});
-	chart.render();
-}
-    </script>
-    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-{% endfor %}
+
 </head>
         {% include 'navbar.html' %}
         <div class="content">
@@ -68,7 +35,13 @@ window.onload = function () {
     $("#my-div").load('/path-to-files/' + i + '.html');
     </script>
     <script type="text/javascript" src="/static/js/webpack/dist/ohlc-chart.bundle.df320049ecde7f55b72b.js"></script>
+</body>
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
-</body>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://d14fo0winaifog.cloudfront.net/plotly-basic.js"></script>
+<script type="text/javascript">
+                    var graphs = {{plot | safe}};
+                    Plotly.plot('candlestick',graphs,{});
+</script>
 </html>

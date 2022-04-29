@@ -1,15 +1,14 @@
 import json
 import sqlite3
-import click
 import plotly
-from flask import Flask, g, render_template, current_app
-from flask.cli import with_appcontext
+from flask import Flask, g, render_template
 from flask_navigation import Navigation
-import plotly.graph_objects as go
 import pandas as pd
-from datetime import datetime
-import matplotlib.pyplot as plt
 import plotly.graph_objects as go
+from plotly.subplots import make_subplots
+import dash
+from dash import dcc
+from dash import html
 
 app = Flask(__name__)
 nav = Navigation(app)
@@ -29,22 +28,6 @@ def get_db_connection():
     conn.row_factory = sqlite3.Row
     return conn
 
-
-def create_plot():
-    conn = get_db_connection()
-    df = pd.read_sql_query('SELECT * FROM finnhub_candles', conn)
-    fig = go.Figure(
-        data=[go.Candlestick(
-            x=df['tstamp'],
-            open=df['open_price'],
-            high=df['high_price'],
-            low=df['low_price'],
-            close=df['close_price']
-        )]
-    )
-    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
-
-    return graphJSON
 
 # Call/Collect data from all database tables
 @app.route('/')
@@ -71,10 +54,21 @@ def cryptocompare_coin_info():
 @app.route('/candles')
 def finnhub_candles():
     conn = get_db_connection()
-    posts = conn.execute('SELECT * FROM finnhub_candles').fetchall()
-    bar = create_plot()
+    df = pd.read_sql_query('SELECT * FROM finnhub_candles', conn)
+
+    fig = go.Figure(data=[go.Candlestick(x=df['tstamp'],
+        open=df['open_price'],
+        high=df['high_price'],
+        low=df['low_price'],
+        close=df['close_price'])])
+
+    #include a go.Bar trace for volumes
+    fig.add_trace(go.Bar(x=df['tstamp'], y=df['volume_data']), secondary_y=False)
+    fig.layout.yaxis2.showgrid = False
+    data = [fig]
+    graphJSON = json.dumps(data, cls=plotly.utils.PlotlyJSONEncoder)
     conn.close()
-    return render_template('candles.html', posts=posts, plot=bar)
+    return render_template('candles.html', graphJSON=graphJSON)
 
 
 @app.route('/coin_market')
