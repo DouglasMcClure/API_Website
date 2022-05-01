@@ -2,13 +2,37 @@
 
     {% block content %}
         <div class="nav a">
-        <h1>{% block title %} Messario News {% endblock %}</h1>
-        {% for post in posts %}
-            <div class="news">
-            <h2>{{ post['title'] }}</h2>
-            <p>{{ post['content'] }}</p>
-            <h3>{{ post['published_at'] }}</h3>
-            </div>
-    {% endfor %}
+{#        <h1>{% block title %} Coin Info {% endblock %}</h1>#}
+            <table>
+                <caption>List of Top Exchanges by Pair</caption>
+                <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Full Name</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Launch Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    {% for post in posts %}
+                    <th scope="row">{{ post['id'] }}</th>
+                    <td>{{ post['name'] }}</td>
+                    <td>{{ post['full_name'] }}</td>
+                    <td>
+                    <img src="{{'https://www.cryptocompare.com' + post['image_url'] }}" height=100 width=100>
+                        </td>
+                    <td>{{ post['asset_launch_date'] }}</td>
+                    {% endfor %}
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                    <th scope="row" colspan="2">Total Exchanges</th>
+                    <td colspan="2">5</td>
+                </tr>
+                </tfoot>
+            </table>
         </div>
 {% endblock %}

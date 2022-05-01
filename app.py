@@ -55,20 +55,20 @@ def cryptocompare_coin_info():
 def finnhub_candles():
     conn = get_db_connection()
     df = pd.read_sql_query('SELECT * FROM finnhub_candles', conn)
-
-    fig = go.Figure(data=[go.Candlestick(x=df['tstamp'],
-        open=df['open_price'],
-        high=df['high_price'],
-        low=df['low_price'],
-        close=df['close_price'])])
-
-    #include a go.Bar trace for volumes
-    fig.add_trace(go.Bar(x=df['tstamp'], y=df['volume_data']), secondary_y=False)
-    fig.layout.yaxis2.showgrid = False
-    data = [fig]
-    graphJSON = json.dumps(data, cls=plotly.utils.PlotlyJSONEncoder)
+    x = df['tstamp']
+    open_price = df['open_price']
+    close_price = df['close_price']
+    high_price = df['high_price']
+    low_price = df['low_price']
+    fig = go.Figure(data=[go.Candlestick(x=x,
+                                         open=open_price,
+                                         high=high_price,
+                                         low=low_price,
+                                         close=close_price)])
+    fig.show()
+    # dcc.Graph(figure=fig)
     conn.close()
-    return render_template('candles.html', graphJSON=graphJSON)
+    return render_template('candles.html')
 
 
 @app.route('/coin_market')

@@ -3,10 +3,8 @@
     {% block content %}
         <div class="nav a">
         <h1>{% block title %} Crypto Candles {% endblock %}</h1>
-            <div class="chart" id="candlestick">
-            </div>
-
-{#            <iframe width="100%" frameborder="0" height="650" src="https://widget.finnhub.io/widgets/stocks/chart?symbol=BINANCE:BTCUSDT&amp;watermarkColor=%231db954&amp;backgroundColor=%23222222&amp;textColor=white">#}
-{#            </iframe>#}
+        <div class="#container">
+                <iframe src="{{ url_for('/candles/') }}"></iframe>
+        </div>
         </div>
 {% endblock %}

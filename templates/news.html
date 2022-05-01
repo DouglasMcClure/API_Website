@@ -4,11 +4,9 @@
         <div class="nav a">
         <h1>{% block title %} News {% endblock %}</h1>
         {% for post in posts %}
-            <div class="news">
             <h2>{{ post['title'] }}</h2>
-            <div>{{ post['content'] }}</div>
+            <div class="content">{{ post['content'] }}</div>
             <h3>{{ post['published_at'] }}</h3>
-            </div>
     {% endfor %}
         </div>
 {% endblock %}
