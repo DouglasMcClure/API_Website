@@ -3,8 +3,6 @@
     {% block content %}
         <div class="nav a">
         <h1>{% block title %} Crypto Candles {% endblock %}</h1>
-        <div class="#container">
-                <iframe src="{{ url_for('/candles/') }}"></iframe>
-        </div>
+                <iframe src="{{ url }}"></iframe>
         </div>
 {% endblock %}
