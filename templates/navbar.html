@@ -1,3 +1,5 @@
+<!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <nav class="navbar navbar-expand-lg">
     <a class="navbar-brand navbar-right" href="{{ url_for('home') }}">
@@ -10,7 +12,9 @@
     <ul class="navbar-nav navbar-right">
         {% for item in nav.top %}
             <li class="{{ 'active' if item.is_active else '' }} nav-item">
+            <div>
                 <a href="{{ item.url }}">{{ item.label }}</a>
+            </div>
             </li>
     {% endfor %}
     </ul>

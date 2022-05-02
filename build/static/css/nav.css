@@ -2,12 +2,12 @@
     display: flex;
     height: auto;
     overflow: hidden;
-    justify-content: space-between;
+    background-color: black;
 }
 
 .navbar a {
     float: left;
-    font-size: 20px;
+    font-size: 16px;
     color: #FFD700;
     text-align: right;
     padding: 14px 16px;
@@ -26,8 +26,4 @@
 .navbar-nav > .active > a{
     background-color: #FFD700;
     color: black;
-}
-
-.navbar-brand{
-    position: absolute;
 }
