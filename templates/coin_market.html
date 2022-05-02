@@ -2,13 +2,37 @@
 
     {% block content %}
         <div class="nav a">
-        <h1>{% block title %} Messario News {% endblock %}</h1>
-        {% for post in posts %}
-            <div class="news">
-            <h2>{{ post['title'] }}</h2>
-            <p>{{ post['content'] }}</p>
-            <h3>{{ post['published_at'] }}</h3>
-            </div>
-    {% endfor %}
+        <h1>{% block title %}{% endblock %}</h1>
+        <div class="table">
+            <table>
+                <caption>Coin Market</caption>
+                <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Base</th>
+                    <th scope="col">Quote</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">USD Price</th>
+                    <th scope="col">Volume</th>
+                    <th scope="col">USD Volume</th>
+                    <th scope="col">Time</th>
+                </tr>
+                </thead>
+                {% for post in posts %}
+                <tbody>
+                <tr>
+                    <th scope="row">{{ post['name'] }}</th>
+                    <td>{{ post['base'] }}</td>
+                    <td>{{ post['quote'] }}</td>
+                    <td>{{ post['price'] }}</td>
+                    <td>{{ post['price_usd'] }}</td>
+                    <td>{{ post['volume'] }}</td>
+                    <td>{{ post['volume_usd'] }}</td>
+                    <td>{{ post['time'] }}</td>
+                </tr>
+                </tbody>
+                {% endfor %}
+            </table>
+        </div>
         </div>
 {% endblock %}

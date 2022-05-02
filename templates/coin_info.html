@@ -14,9 +14,9 @@
                     <th scope="col">Launch Date</th>
                 </tr>
                 </thead>
+                {% for post in posts %}
                 <tbody>
                 <tr>
-                    {% for post in posts %}
                     <th scope="row">{{ post['id'] }}</th>
                     <td>{{ post['name'] }}</td>
                     <td>{{ post['full_name'] }}</td>
@@ -24,13 +24,13 @@
                     <img src="{{'https://www.cryptocompare.com' + post['image_url'] }}" height=100 width=100>
                         </td>
                     <td>{{ post['asset_launch_date'] }}</td>
-                    {% endfor %}
                 </tr>
                 </tbody>
+                {% endfor %}
                 <tfoot>
                 <tr>
                     <th scope="row" colspan="2">Total Exchanges</th>
-                    <td colspan="2">5</td>
+                    <td colspan="2">6</td>
                 </tr>
                 </tfoot>
             </table>
