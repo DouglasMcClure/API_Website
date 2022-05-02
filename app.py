@@ -1,15 +1,9 @@
-import json
 import sqlite3
-import chart_studio.tools as tls
-import plotly
-from dash import Dash, dcc, html, Input, Output
-from flask import Markup
-from flask import Flask, g, render_template
-from flask_navigation import Navigation
 import pandas as pd
+import plotly
 import plotly.graph_objects as go
-import plotly.io as py
-from plotly.subplots import make_subplots
+from flask import Flask, render_template
+from flask_navigation import Navigation
 
 app = Flask(__name__)
 nav = Navigation(app)
@@ -21,19 +15,6 @@ nav.Bar('top', [
     nav.Item('Trade Assets', 'trade_assets'),
     nav.Item('Coin Info', 'cryptocompare_coin_info'),
 ])
-
-
-# app.layout = html.Div([
-#     html.H4('Apple stock candlestick chart'),
-#     dcc.Checklist(
-#         id='toggle-rangeslider',
-#         options=[{'label': 'Include Rangeslider',
-#                   'value': 'slider'}],
-#         value=['slider']
-#     ),
-#     dcc.Graph(id="graph"),
-# ])
-
 
 def get_db_connection():
     conn = sqlite3.connect('Apifiles\APIandOutput\capstonedatabase.sqlite')
@@ -63,9 +44,6 @@ def cryptocompare_coin_info():
     return render_template('coin_info.html', posts=posts)
 
 
-# @server.callback(
-#     Output("graph", "figure"),
-#     Input("toggle-rangeslider", "value"))
 @app.route('/candles')
 def finnhub_candles():
     conn = get_db_connection()
@@ -80,8 +58,8 @@ def finnhub_candles():
                                          high=high_price,
                                          low=low_price,
                                          close=close_price)])
-    # dcc.Graph(figure=fig)
-    py.write_html(fig, file='plotly.html', auto_open=True)
+
+    plotly.offline.plot(fig, include_plotlyjs=False, output_type='div')
     conn.close()
     return render_template('candles.html')
 
