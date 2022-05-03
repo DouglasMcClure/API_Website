@@ -16,6 +16,7 @@ nav.Bar('top', [
     nav.Item('Coin Info', 'cryptocompare_coin_info'),
 ])
 
+
 def get_db_connection():
     conn = sqlite3.connect('Apifiles\APIandOutput\capstonedatabase.sqlite')
     conn.row_factory = sqlite3.Row

@@ -1,21 +1,82 @@
-table{
-  width: 100%;
-  height: 100%;
-  background-color: #FFD700;
+html{
+    height: 100%;
 }
 
-tr{
-  border: 3px solid black;
+body{
+    min-height: 100%;
 }
 
-/* caption */
+.navbar{
+    background-color: black;
+}
 
-caption {
-  font-family: 'Rock Salt', cursive;
-  padding: 20px;
-  font-style: italic;
-  caption-side: bottom;
-  color: #FFD700;
-  text-align: right;
-  letter-spacing: 1px;
+caption{
+    background: black;
+}
+
+div{
+    text-align: center;
+}
+
+h1 a{
+    color: black;
+}
+
+h1 a:hover{
+    text-decoration: none;
+    color: #FFD700;
+}
+
+h1 a:active{
+    color: black;
+}
+
+thead{
+    border-bottom: 3px solid black;
+}
+
+td a{
+    color: black;
+}
+
+td a:hover{
+    text-decoration: none;
+    color: #FFD700;
+}
+
+.container-table{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    background-color: #FFD700;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+}
+
+.container-table thead tr{
+    background-color: black;
+    color: #FFD700;
+    text-align: left;
+    font-weight: bold;
+}
+
+.container-table th
+.container-table td{
+    padding: 12px 15px;
+}
+
+.container-table tbody tr{
+    border-bottom: 1px solid #dddddd;
+}
+
+.container-table tbody tr:nth-of-type(even){
+    background-color: black;
+    color: black;
+}
+
+.container-table tbody tr:last-of-type{
+    border-bottom: 2px solid black;
 }

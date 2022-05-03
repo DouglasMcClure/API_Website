@@ -1,11 +1,16 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/table.css') }}">
 {% extends 'base.html' %}
 
     {% block content %}
-        <div class="nav a">
-        <h1>{% block title %}{% endblock %}</h1>
+        <div>
+        <h1> Created by
+                <a href="https://github.com/StevenLepore" target="_blank" rel="noreferrer noopener">Steven Lepore</a>
+            </h1>
+        <h2>Trade Assets</h2>
+        </div>
         <div class="table">
-            <table>
-                <caption>List of Assets</caption>
+            <table class="container-table">
+                <caption style="color: #FFD700">List of Assets</caption>
                 <thead>
                 <tr>
                     <th scope="col">Asset</th>
@@ -29,6 +34,5 @@
                 </tbody>
                 {% endfor %}
             </table>
-        </div>
         </div>
 {% endblock %}

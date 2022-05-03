@@ -1,10 +1,16 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/table.css') }}">
 {% extends 'base.html' %}
 
     {% block content %}
-        <div class="nav a">
-{#        <h1>{% block title %} Coin Info {% endblock %}</h1>#}
-            <table>
-                <caption>List of Top Exchanges by Pair</caption>
+        <div>
+        <h1> Created by
+                <a href="https://github.com/Harshilp18" target="_blank" rel="noreferrer noopener">Harshil Patel</a>
+            </h1>
+        <h2>Coin Info</h2>
+        </div>
+        <div class="table">
+            <table class="container-table">
+                <caption style="color: #FFD700">List of Top Exchanges by Pair</caption>
                 <thead>
                 <tr>
                     <th scope="col">ID</th>

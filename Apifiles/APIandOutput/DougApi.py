@@ -1,7 +1,10 @@
 import json
+import xml.etree.ElementTree
+
 from six.moves import urllib
 import sqlite3
 from sqlite3 import Error
+from bs4 import BeautifulSoup
 
 
 def create_connection(db_file):
@@ -17,6 +20,10 @@ def create_connection(db_file):
         print(e)
 
     return conn
+
+
+def remove_tags(text):
+    return ''.join(xml.etree.ElementTree.fromstring(text).itertext())
 
 
 def select_all_tasks(conn):
@@ -64,6 +71,7 @@ def main():
     res = urllib.request.urlopen(url)
     res = json.load(res)
     res = json.dumps(res)
+    res = BeautifulSoup(res, "lxml").text
     with open('DougOutput.json', 'w') as json_file:
         json_file.write(res)
 
