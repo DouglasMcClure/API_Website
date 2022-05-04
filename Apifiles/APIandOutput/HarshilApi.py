@@ -36,7 +36,6 @@ def select_all_tasks(conn):
 
     with open('HarshilOutput.json') as json_file:
         data = json.load(json_file)
-        print(type(data))
         sql1 = 'DROP TABLE IF EXISTS cryptocompare_coin_info'
         sql2 = 'CREATE TABLE cryptocompare_coin_info (id integer, type integer, market varchar, name varchar(255), ' \
                'full_name varchar(255), ' \
@@ -45,26 +44,28 @@ def select_all_tasks(conn):
         sql3 = 'INSERT OR REPLACE INTO cryptocompare_coin_info VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
         cur.execute(sql1)
         cur.execute(sql2)
-        for i in data:
-            i=dict(i)
-            data_id = i['CoinInfo']['Id']
-            data_type = i['AggregatedData']['TYPE']
-            market = i['AggregatedData']['MARKET']
-            name = data['CoinInfo']['Name']
-            full_name = data['CoinInfo']['FullName']
-            image_url = data['CoinInfo']['ImageUrl']
-            asset_launch_date = data['CoinInfo']['AssetLaunchDate']
-            price = data['AggregatedData']['PRICE']
-            open_day = data['AggregatedData']['OPENDAY']
-            high_day = data['AggregatedData']['HIGHDAY']
-            low_day = data['AggregatedData']['LOWDAY']
 
-        val = (
-            data_id, data_type, market, name, full_name, image_url, asset_launch_date, price, open_day, high_day,
-            low_day)
-        conn.commit()
-        cur.execute(sql3, val)
-        conn.commit()
+        data_id = data['Data']['CoinInfo']['Id']
+        name = data['Data']['CoinInfo']['Name']
+        full_name = data['Data']['CoinInfo']['FullName']
+        image_url = data['Data']['CoinInfo']['ImageUrl']
+        asset_launch_date = data['Data']['CoinInfo']['AssetLaunchDate']
+        j = 0
+        for i in range(len(data)):
+            while j < len(data['Data']['Exchanges']):
+                price = data['Data']['Exchanges'][j]['PRICE']
+                data_type = data['Data']['Exchanges'][j]['TYPE']
+                market = data['Data']['Exchanges'][j]['MARKET']
+                open_day = data['Data']['Exchanges'][j]['OPENDAY']
+                high_day = data['Data']['Exchanges'][j]['HIGHDAY']
+                low_day = data['Data']['Exchanges'][j]['LOWDAY']
+                j = j+1
+                val = (
+                    data_id, data_type, market, name, full_name, image_url, asset_launch_date, price, open_day, high_day,
+                    low_day)
+                conn.commit()
+                cur.execute(sql3, val)
+                conn.commit()
 
         print("data inserted")
         cur.close()
@@ -77,6 +78,7 @@ def main():
     r = requests.get("https://min-api.cryptocompare.com/data/top/exchanges/full?fsym=BTC&tsym=USD")
     res = r.json()
     data = json.dumps(res)
+    print(data)
     f = open("HarshilOutput.json", "w")
     f.write(data)
     f.close()

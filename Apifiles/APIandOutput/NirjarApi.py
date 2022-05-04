@@ -4,6 +4,7 @@ import sqlite3
 from sqlite3 import Error
 from datetime import datetime
 
+
 def create_connection(db_file):
     """ create a database connection to the SQLite database
             specified by the db_file
@@ -54,11 +55,11 @@ def select_all_tasks(conn):
             conn.commit()
             cur.execute(sql3, val)
             conn.commit()
-            i=i+1
+            i = i + 1
         cur.close()
 
-
         print("records inserted")
+
 
 def main():
     file = "capstonedatabase.sqlite"

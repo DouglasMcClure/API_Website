@@ -1,6 +1,5 @@
 import json
 import xml.etree.ElementTree
-
 from six.moves import urllib
 import sqlite3
 from sqlite3 import Error
