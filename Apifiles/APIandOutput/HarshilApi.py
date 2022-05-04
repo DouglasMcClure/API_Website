@@ -36,23 +36,35 @@ def select_all_tasks(conn):
 
     with open('HarshilOutput.json') as json_file:
         data = json.load(json_file)
-        print(data)
+        print(type(data))
         sql1 = 'DROP TABLE IF EXISTS cryptocompare_coin_info'
-        sql2 = 'CREATE TABLE cryptocompare_coin_info (id integer, name varchar(255), full_name varchar(255), ' \
-               'image_url varchar(255), asset_launch_date DATE) '
-        sql3 = 'INSERT OR REPLACE INTO cryptocompare_coin_info VALUES (?, ?, ?, ?, ?)'
+        sql2 = 'CREATE TABLE cryptocompare_coin_info (id integer, type integer, market varchar, name varchar(255), ' \
+               'full_name varchar(255), ' \
+               'image_url varchar(255), asset_launch_date DATE, price FLOAT, open_day FLOAT, high_day FLOAT, ' \
+               'low_day FLOAT) '
+        sql3 = 'INSERT OR REPLACE INTO cryptocompare_coin_info VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
         cur.execute(sql1)
         cur.execute(sql2)
         for i in data:
-            id = data['Data']['CoinInfo']['Id']
-            name = data['Data']['CoinInfo']['Name']
-            full_name = data['Data']['CoinInfo']['FullName']
-            image_url = data['Data']['CoinInfo']['ImageUrl']
-            asset_launch_date = data['Data']['CoinInfo']['AssetLaunchDate']
-            val = (id, name, full_name, image_url, asset_launch_date)
-            conn.commit()
-            cur.execute(sql3, val)
-            conn.commit()
+            i=dict(i)
+            data_id = i['CoinInfo']['Id']
+            data_type = i['AggregatedData']['TYPE']
+            market = i['AggregatedData']['MARKET']
+            name = data['CoinInfo']['Name']
+            full_name = data['CoinInfo']['FullName']
+            image_url = data['CoinInfo']['ImageUrl']
+            asset_launch_date = data['CoinInfo']['AssetLaunchDate']
+            price = data['AggregatedData']['PRICE']
+            open_day = data['AggregatedData']['OPENDAY']
+            high_day = data['AggregatedData']['HIGHDAY']
+            low_day = data['AggregatedData']['LOWDAY']
+
+        val = (
+            data_id, data_type, market, name, full_name, image_url, asset_launch_date, price, open_day, high_day,
+            low_day)
+        conn.commit()
+        cur.execute(sql3, val)
+        conn.commit()
 
         print("data inserted")
         cur.close()
