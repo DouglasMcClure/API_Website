@@ -8,6 +8,10 @@
     transform: translate(-50%,-50%);
 }
 
+.back{
+    background: black;
+}
+
 .graph{
     justify-content: center;
     align-items: center;
@@ -21,15 +25,25 @@ div{
     text-align: center;
 }
 
+h1{
+    color: white;
+}
+
 h1 a{
-    color: black;
+    color: #FFD700;
 }
 
 h1 a:hover{
     text-decoration: none;
-    color: #FFD700;
+    color: white;
 }
 
 h1 a:active{
     color: black;
 }
+
+h2{
+    color: white;
+    border-bottom: black 20px solid;
+}
+

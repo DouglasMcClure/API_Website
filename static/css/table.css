@@ -11,27 +11,43 @@ body{
 }
 
 caption{
+    margin-left: 10px;
     background: black;
+}
+
+.back{
+    background: black;
+    overflow: hidden;
+    background-size: cover;
 }
 
 div{
     text-align: center;
 }
 
+h1{
+    color: white;
+}
+
 h1 a{
-    color: black;
+    color: #FFD700;
 }
 
 h1 a:hover{
     text-decoration: none;
-    color: #FFD700;
+    color: white;
 }
 
 h1 a:active{
     color: black;
 }
 
+h2{
+    color: #dddddd;
+}
+
 thead{
+    border-top: 3px solid black;
     border-bottom: 3px solid black;
 }
 
