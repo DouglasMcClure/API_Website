@@ -1,16 +1,11 @@
+<link rel="stylesheet" href="/static/css/table.css">
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html"; charset="utf-8"/>
 
-    <link href='https://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/static/css/nav.css">
-    <link rel="stylesheet" href="/static/css/news.css">
-    <link rel="stylesheet" href="/static/css/home.css">
     <link rel="stylesheet" href="/static/css/base.css">
-    <link rel="stylesheet" href="/static/css/candles.css">
-    <link rel="stylesheet" href="/static/css/table.css">
-    <link rel="stylesheet" href="/static/css/assets.css">
+    <link rel="stylesheet" href="/static/css/nav.css">
 
     <!-- Bootstrap CSS -->
         <link rel="stylesheet"
@@ -22,7 +17,10 @@
     <title> </title>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
-        
+<body>
+        <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <nav class="navbar navbar-expand-lg">
     <a class="navbar-brand navbar-right" href="/">
             <img src="/static//images/logo.png" width="40" height="40" class="d-inline-block align-top" alt="CryptoMinds Logo">
@@ -31,133 +29,175 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav navbar-right">
+    <ul class="navbar-nav navbar-right menu">
         
             <li class=" nav-item">
+            <div id="nav-links">
                 <a href="/">Home</a>
+            </div>
             </li>
     
             <li class=" nav-item">
+            <div id="nav-links">
                 <a href="/news">News</a>
+            </div>
             </li>
     
             <li class=" nav-item">
+            <div id="nav-links">
                 <a href="/candles">Candles</a>
+            </div>
             </li>
     
             <li class=" nav-item">
+            <div id="nav-links">
                 <a href="/coin_market">Coin Market</a>
+            </div>
             </li>
     
             <li class=" nav-item">
+            <div id="nav-links">
                 <a href="/assets">Trade Assets</a>
+            </div>
             </li>
     
             <li class="active nav-item">
+            <div id="nav-links">
                 <a href="/coin_info">Coin Info</a>
+            </div>
             </li>
     
     </ul>
-  </div>
+</div>
 </nav>
-        <div class="content">
-            
-        <div class="nav a">
-
-            <table>
-                <caption>List of Top Exchanges by Pair</caption>
+        
+        <div class="back">
+        <div>
+        <h1> Created by
+                <a href="https://github.com/Harshilp18" target="_blank" rel="noreferrer noopener">Harshil Patel</a>
+            </h1>
+        <h2>Coin Info</h2>
+        </div>
+        <div class="table">
+            <table class="container-table">
+                <caption style="color: #FFD700">List of Top Exchanges by Pair</caption>
                 <thead>
                 <tr>
                     <th scope="col">ID</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Market</th>
                     <th scope="col">Name</th>
                     <th scope="col">Full Name</th>
                     <th scope="col">Image</th>
                     <th scope="col">Launch Date</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Open Day</th>
+                    <th scope="col">High Day</th>
+                    <th scope="col">Close Day</th>
+
                 </tr>
                 </thead>
                 
                 <tbody>
                 <tr>
                     <th scope="row">1182</th>
+                    <th scope="row">2</th>
+                    <th scope="row">betconix</th>
                     <td>BTC</td>
                     <td>Bitcoin</td>
                     <td>
                     <img src="https://www.cryptocompare.com/media/37746251/btc.png" height=100 width=100>
                         </td>
                     <td>2009-01-03</td>
+                    <td>31162.35339</td>
+                    <td>30261.10188</td>
+                    <td>31349.717025</td>
+                    <td>29873.07599</td>
                 </tr>
                 </tbody>
                 
                 <tbody>
                 <tr>
                     <th scope="row">1182</th>
+                    <th scope="row">2</th>
+                    <th scope="row">Coinbase</th>
                     <td>BTC</td>
                     <td>Bitcoin</td>
                     <td>
                     <img src="https://www.cryptocompare.com/media/37746251/btc.png" height=100 width=100>
                         </td>
                     <td>2009-01-03</td>
+                    <td>31153.96</td>
+                    <td>30078.27</td>
+                    <td>31450.11</td>
+                    <td>29735.05</td>
                 </tr>
                 </tbody>
                 
                 <tbody>
                 <tr>
                     <th scope="row">1182</th>
+                    <th scope="row">2</th>
+                    <th scope="row">ftx</th>
                     <td>BTC</td>
                     <td>Bitcoin</td>
                     <td>
                     <img src="https://www.cryptocompare.com/media/37746251/btc.png" height=100 width=100>
                         </td>
                     <td>2009-01-03</td>
+                    <td>31134.0</td>
+                    <td>30096.0</td>
+                    <td>31428.0</td>
+                    <td>29721.0</td>
                 </tr>
                 </tbody>
                 
                 <tbody>
                 <tr>
                     <th scope="row">1182</th>
+                    <th scope="row">2</th>
+                    <th scope="row">bullish</th>
                     <td>BTC</td>
                     <td>Bitcoin</td>
                     <td>
                     <img src="https://www.cryptocompare.com/media/37746251/btc.png" height=100 width=100>
                         </td>
                     <td>2009-01-03</td>
+                    <td>31091.0004</td>
+                    <td>31362.225</td>
+                    <td>31362.225</td>
+                    <td>30698.5883</td>
                 </tr>
                 </tbody>
                 
                 <tbody>
                 <tr>
                     <th scope="row">1182</th>
+                    <th scope="row">2</th>
+                    <th scope="row">Bitfinex</th>
                     <td>BTC</td>
                     <td>Bitcoin</td>
                     <td>
                     <img src="https://www.cryptocompare.com/media/37746251/btc.png" height=100 width=100>
                         </td>
                     <td>2009-01-03</td>
-                </tr>
-                </tbody>
-                
-                <tbody>
-                <tr>
-                    <th scope="row">1182</th>
-                    <td>BTC</td>
-                    <td>Bitcoin</td>
-                    <td>
-                    <img src="https://www.cryptocompare.com/media/37746251/btc.png" height=100 width=100>
-                        </td>
-                    <td>2009-01-03</td>
+                    <td>31160.0</td>
+                    <td>30140.0</td>
+                    <td>31485.0</td>
+                    <td>29833.0</td>
                 </tr>
                 </tbody>
                 
                 <tfoot>
                 <tr>
                     <th scope="row" colspan="2">Total Exchanges</th>
-                    <td colspan="2">6</td>
+                    <td colspan="2">5</td>
                 </tr>
                 </tfoot>
             </table>
         </div>
-
         </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -178,5 +218,12 @@
 <script type="text/javascript">
                     var graphs = ;
                     Plotly.plot('candlestick',graphs,{});
+</script>
+<script>
+    $(function() {
+    $("#news p").each(function() {
+        $(this).find("a").removeAttr("href");
+    });
+});
 </script>
 </html>

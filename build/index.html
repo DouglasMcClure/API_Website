@@ -1,16 +1,11 @@
+<link rel="stylesheet" href="/static/css/home.css">
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html"; charset="utf-8"/>
 
-    <link href='https://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/static/css/nav.css">
-    <link rel="stylesheet" href="/static/css/news.css">
-    <link rel="stylesheet" href="/static/css/home.css">
     <link rel="stylesheet" href="/static/css/base.css">
-    <link rel="stylesheet" href="/static/css/candles.css">
-    <link rel="stylesheet" href="/static/css/table.css">
-    <link rel="stylesheet" href="/static/css/assets.css">
+    <link rel="stylesheet" href="/static/css/nav.css">
 
     <!-- Bootstrap CSS -->
         <link rel="stylesheet"
@@ -22,7 +17,10 @@
     <title> </title>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
-        
+<body>
+        <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <nav class="navbar navbar-expand-lg">
     <a class="navbar-brand navbar-right" href="/">
             <img src="/static//images/logo.png" width="40" height="40" class="d-inline-block align-top" alt="CryptoMinds Logo">
@@ -31,37 +29,48 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav navbar-right">
+    <ul class="navbar-nav navbar-right menu">
         
             <li class="active nav-item">
+            <div id="nav-links">
                 <a href="/">Home</a>
+            </div>
             </li>
     
             <li class=" nav-item">
+            <div id="nav-links">
                 <a href="/news">News</a>
+            </div>
             </li>
     
             <li class=" nav-item">
+            <div id="nav-links">
                 <a href="/candles">Candles</a>
+            </div>
             </li>
     
             <li class=" nav-item">
+            <div id="nav-links">
                 <a href="/coin_market">Coin Market</a>
+            </div>
             </li>
     
             <li class=" nav-item">
+            <div id="nav-links">
                 <a href="/assets">Trade Assets</a>
+            </div>
             </li>
     
             <li class=" nav-item">
+            <div id="nav-links">
                 <a href="/coin_info">Coin Info</a>
+            </div>
             </li>
     
     </ul>
-  </div>
+</div>
 </nav>
-        <div class="content">
-            
+        
         <div class="hero">
         <section href="#top">
             <div class="hcontent">
@@ -77,7 +86,6 @@
         </section>
         </div>
     
-        </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -98,5 +106,12 @@
 <script type="text/javascript">
                     var graphs = ;
                     Plotly.plot('candlestick',graphs,{});
+</script>
+<script>
+    $(function() {
+    $("#news p").each(function() {
+        $(this).find("a").removeAttr("href");
+    });
+});
 </script>
 </html>
