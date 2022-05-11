@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/table.css') }}">
+{% extends 'base.html' %}
+
+    {% block content %}
+        <div class="back">
+        <div>
+        <h1> Created by
+                <a href="https://github.com/castel58" target="_blank">Sebastian Castellon</a>
+            </h1>
+        <h2>Coin Market</h2>
+        </div>
+        <div class="table">
+            <table class="container-table">
+                <caption style="color: #FFD700">List of Crypto Currency In The Coin Market</caption>
+                <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Base</th>
+                    <th scope="col">Quote</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">USD Price</th>
+                    <th scope="col">Volume</th>
+                    <th scope="col">USD Volume</th>
+                    <th scope="col">Time</th>
+                </tr>
+                </thead>
+                {% for post in posts %}
+                <tbody>
+                <tr>
+                    <th scope="row">{{ post['name'] }}</th>
+                    <td>{{ post['base'] }}</td>
+                    <td>{{ post['quote'] }}</td>
+                    <td>{{ post['price'] }}</td>
+                    <td>{{ post['price_usd'] }}</td>
+                    <td>{{ post['volume'] }}</td>
+                    <td>{{ post['volume_usd'] }}</td>
+                    <td>{{ post['time'] }}</td>
+                </tr>
+                </tbody>
+                {% endfor %}
+            </table>
+        </div>
+        </div>
+{% endblock %}
