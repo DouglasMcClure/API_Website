@@ -1,0 +1,84 @@
+/* hide scrollbar but allow scrolling */
+body {
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
+
+.hero{
+  overflow: hidden;
+  background-size: cover;
+  height: 100vh;
+  /*background: linear-gradient(rgba(12,3,51,0.3), rgba(12,3,51,0.3));*/
+  position: relative;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Style the video: 100% width and height to cover the entire window */
+.myVideo {
+   /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 1024px;
+  z-index: -1;
+
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+@media screen and (min-aspect-ratio: 16/9) { /* Specific to this particular image */
+  .myVideo {
+    width: auto;
+    height: 100%;
+  }
+}
+
+.hcontent{
+  text-align: center;
+  background: transparent;
+}
+
+.hcontent h1{
+  font-size: 160px;
+  color: #FFD700;
+  font-weight: 600;
+  transition: 0.5s;
+}
+
+.hcontent h1:hover{
+  -webkit-text-stroke: 2px #FFD700;
+  color: transparent;
+}
+
+.hcontent a{
+  text-decoration: none;
+  display: inline-block;
+  color: #FFD700;
+  font-size: 24px;
+  border: 2px solid #FFD700;
+  padding: 14px 70px;
+  border-radius: 50px;
+  margin-top: 20px;
+  background-position: 0 -100%;
+  background-repeat: repeat-x;
+  transition: background-position 0.8s ease;
+}
+
+.hcontent a:hover{
+  background-position: 100% 50%;
+  border-color: #FFD700;
+  color: black;
+  background-color: #FFD700;
+}
