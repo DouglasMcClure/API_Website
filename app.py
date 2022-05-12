@@ -5,8 +5,14 @@ import plotly.graph_objects as go
 from flask import Flask, render_template
 from flask_navigation import Navigation
 
-app = Flask(__name__)
-nav = Navigation(app)
+
+def setup_app(test_config=None):
+    app = Flask(__name__)
+    nav = Navigation(app)
+
+
+setup_app()
+
 nav.Bar('top', [
     nav.Item('Home', 'home'),
     nav.Item('News', 'messario_news'),
