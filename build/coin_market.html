@@ -1,0 +1,779 @@
+<link rel="stylesheet" href="/static/css/table.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/nav.css">
+
+    <!-- Bootstrap CSS -->
+        <link rel="stylesheet"
+              href=
+"https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+              integrity=
+"sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+              crossorigin="anonymous" />
+    <title> </title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+        <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand navbar-right" href="/home.html">
+            <img src="/static//images/logo.png" width="40" height="40" class="d-inline-block align-top" alt="CryptoMinds Logo">
+    </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav navbar-right menu">
+        
+            <li class=" nav-item">
+            <div id="nav-links">
+                <a href="/home.html">Home</a>
+            </div>
+            </li>
+    
+            <li class=" nav-item">
+            <div id="nav-links">
+                <a href="/news.html">News</a>
+            </div>
+            </li>
+    
+            <li class=" nav-item">
+            <div id="nav-links">
+                <a href="/candles.html">Candles</a>
+            </div>
+            </li>
+    
+            <li class="active nav-item">
+            <div id="nav-links">
+                <a href="/coin_market.html">Coin Market</a>
+            </div>
+            </li>
+    
+            <li class=" nav-item">
+            <div id="nav-links">
+                <a href="/assets.html">Trade Assets</a>
+            </div>
+            </li>
+    
+            <li class=" nav-item">
+            <div id="nav-links">
+                <a href="/coin_info.html">Coin Info</a>
+            </div>
+            </li>
+    
+    </ul>
+</div>
+</nav>
+        
+        <div class="back">
+        <div>
+        <h1> Created by
+                <a href="https://github.com/castel58" target="_blank">Sebastian Castellon</a>
+            </h1>
+        <h2>Coin Market</h2>
+        </div>
+        <div class="table">
+            <table class="container-table">
+                <caption style="color: #FFD700">List of Crypto Currency In The Coin Market</caption>
+                <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Base</th>
+                    <th scope="col">Quote</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">USD Price</th>
+                    <th scope="col">Volume</th>
+                    <th scope="col">USD Volume</th>
+                    <th scope="col">Time</th>
+                </tr>
+                </thead>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">Binance</th>
+                    <td>BTC</td>
+                    <td>USDT</td>
+                    <td>45932.8</td>
+                    <td>45932.8</td>
+                    <td>64945.19302</td>
+                    <td>2983114561.9491</td>
+                    <td>1631159781</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">Bitcoin.com</th>
+                    <td>BTC</td>
+                    <td>USD</td>
+                    <td>45927.38</td>
+                    <td>45927.38</td>
+                    <td>52851.42522</td>
+                    <td>2427327489.6205</td>
+                    <td>1631159711</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">HitBTC</th>
+                    <td>BTC</td>
+                    <td>USDT</td>
+                    <td>45920.26</td>
+                    <td>45920.26</td>
+                    <td>52691.69555</td>
+                    <td>2419616359.4968</td>
+                    <td>1631159660</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">Huobi</th>
+                    <td>BTC</td>
+                    <td>USDT</td>
+                    <td>46025.15</td>
+                    <td>46025.15</td>
+                    <td>25122.23021336</td>
+                    <td>1156254413.9044</td>
+                    <td>1631159565</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">Coinbase Pro</th>
+                    <td>BTC</td>
+                    <td>USD</td>
+                    <td>45985.64</td>
+                    <td>45985.64</td>
+                    <td>18264.53547379</td>
+                    <td>839906353.06494</td>
+                    <td>1631159592</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">Lbank</th>
+                    <td>BTC</td>
+                    <td>USDT</td>
+                    <td>45918.63</td>
+                    <td>45918.63</td>
+                    <td>16817.0146</td>
+                    <td>772214271.122</td>
+                    <td>1631159654</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">FTX</th>
+                    <td>BTC</td>
+                    <td>USD</td>
+                    <td>46013.0</td>
+                    <td>46013.0</td>
+                    <td>16094.182394641</td>
+                    <td>740541614.52462</td>
+                    <td>1631159536</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">ZB.com</th>
+                    <td>BTC</td>
+                    <td>USDT</td>
+                    <td>45863.12</td>
+                    <td>45863.12</td>
+                    <td>16070.3148</td>
+                    <td>737034776.11018</td>
+                    <td>1631159657</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">IDCM</th>
+                    <td>BTC</td>
+                    <td>USDT</td>
+                    <td>45898.94</td>
+                    <td>45898.94</td>
+                    <td>15081.5683</td>
+                    <td>692227998.5076</td>
+                    <td>1631159648</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">Indoex</th>
+                    <td>BTC</td>
+                    <td>USD</td>
+                    <td>46054.68163361232</td>
+                    <td>46054.68163361232</td>
+                    <td>13385.675114868</td>
+                    <td>616473005.86621</td>
+                    <td>1631159782</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">KKCoin</th>
+                    <td>BTC</td>
+                    <td>USDT</td>
+                    <td>45939.96</td>
+                    <td>45939.96</td>
+                    <td>12917.54</td>
+                    <td>593431270.8984</td>
+                    <td>1631159778</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">OKEX</th>
+                    <td>BTC</td>
+                    <td>USDT</td>
+                    <td>45904.0</td>
+                    <td>45904.0</td>
+                    <td>12868.216568092</td>
+                    <td>590702613.3417</td>
+                    <td>1631159779</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">Binance</th>
+                    <td>ETH</td>
+                    <td>BTC</td>
+                    <td>0.075347</td>
+                    <td>3462.183724685</td>
+                    <td>160674.0328</td>
+                    <td>556283021.33966</td>
+                    <td>1631159780</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">Bitrue</th>
+                    <td>BTC</td>
+                    <td>USDT</td>
+                    <td>45925.92</td>
+                    <td>45925.92</td>
+                    <td>11784.379</td>
+                    <td>541208447.20368</td>
+                    <td>1631159541</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">KKCoin</th>
+                    <td>ETH</td>
+                    <td>BTC</td>
+                    <td>0.075329</td>
+                    <td>3460.61124684</td>
+                    <td>143059.23</td>
+                    <td>495072380.30227</td>
+                    <td>1631159778</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">Coinbene</th>
+                    <td>BTC</td>
+                    <td>USDT</td>
+                    <td>45904.34</td>
+                    <td>45904.34</td>
+                    <td>10217.618976768</td>
+                    <td>469033055.50001</td>
+                    <td>1631159781</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">Binance</th>
+                    <td>SOL</td>
+                    <td>BTC</td>
+                    <td>0.0045698</td>
+                    <td>209.981647379</td>
+                    <td>1986102.91</td>
+                    <td>417045160.90603</td>
+                    <td>1631159662</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">Whitebit</th>
+                    <td>BTC</td>
+                    <td>USDT</td>
+                    <td>45930.39</td>
+                    <td>45930.39</td>
+                    <td>8852.788731</td>
+                    <td>406612039.00244</td>
+                    <td>1631159779</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">Coinsbit</th>
+                    <td>BTC</td>
+                    <td>USDT</td>
+                    <td>46022.82931708</td>
+                    <td>46022.82931708</td>
+                    <td>8372.90932241</td>
+                    <td>385344976.63266</td>
+                    <td>1631159056</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">Simex Global</th>
+                    <td>BTC</td>
+                    <td>USD</td>
+                    <td>45978.39</td>
+                    <td>45978.39</td>
+                    <td>8054.5654</td>
+                    <td>370335949.24171</td>
+                    <td>1631159709</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">Indoex</th>
+                    <td>BTC</td>
+                    <td>EUR</td>
+                    <td>38959.1729003259</td>
+                    <td>46067.25879840169</td>
+                    <td>7839.300479091</td>
+                    <td>361135083.96872</td>
+                    <td>1631159782</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">Bitfinex</th>
+                    <td>BTC</td>
+                    <td>USD</td>
+                    <td>45905.0</td>
+                    <td>45905.0</td>
+                    <td>7568.76479983</td>
+                    <td>347444148.1362</td>
+                    <td>1631159779</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">Kucoin</th>
+                    <td>BTC</td>
+                    <td>USDT</td>
+                    <td>45906.0</td>
+                    <td>45906.0</td>
+                    <td>7104.12937383</td>
+                    <td>326122163.03504</td>
+                    <td>1631159656</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">Bkex</th>
+                    <td>BTC</td>
+                    <td>USDT</td>
+                    <td>45895.5</td>
+                    <td>45895.5</td>
+                    <td>6703.3744</td>
+                    <td>307654719.7752</td>
+                    <td>1631159655</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">DigiFinex</th>
+                    <td>BTC</td>
+                    <td>USDT</td>
+                    <td>46063.44</td>
+                    <td>46063.44</td>
+                    <td>6043.69019357</td>
+                    <td>278393160.6101</td>
+                    <td>1631159710</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">OKEX</th>
+                    <td>SOL</td>
+                    <td>BTC</td>
+                    <td>0.0045512</td>
+                    <td>209.19545288</td>
+                    <td>1330528.2562841</td>
+                    <td>278340461.14299</td>
+                    <td>1631159657</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">Coinsbit</th>
+                    <td>ETH</td>
+                    <td>BTC</td>
+                    <td>0.075402</td>
+                    <td>3467.9804149378165</td>
+                    <td>71699.43645786</td>
+                    <td>248652241.39794</td>
+                    <td>1631159056</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">Binance</th>
+                    <td>ADA</td>
+                    <td>BTC</td>
+                    <td>5.27e-05</td>
+                    <td>2.4215573585</td>
+                    <td>99061068.3</td>
+                    <td>239882058.88274</td>
+                    <td>1631159656</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">Indoex</th>
+                    <td>ETH</td>
+                    <td>BTC</td>
+                    <td>0.075441599733518</td>
+                    <td>3470.521287756452</td>
+                    <td>66936.945665463</td>
+                    <td>232306094.86939</td>
+                    <td>1631159781</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">ZBG</th>
+                    <td>BTC</td>
+                    <td>USDT</td>
+                    <td>45887.97</td>
+                    <td>45887.97</td>
+                    <td>4751.9921</td>
+                    <td>218059270.92504</td>
+                    <td>1631159650</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">Indoex</th>
+                    <td>BTC</td>
+                    <td>USDT</td>
+                    <td>46040.52140271247</td>
+                    <td>46040.52140271247</td>
+                    <td>4446.0906238772</td>
+                    <td>204700330.52702</td>
+                    <td>1631159782</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">Bitcoin.com</th>
+                    <td>ETH</td>
+                    <td>BTC</td>
+                    <td>0.075428</td>
+                    <td>3464.49191555886</td>
+                    <td>56816.0443</td>
+                    <td>196838726.15138</td>
+                    <td>1631159712</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">HitBTC</th>
+                    <td>ETH</td>
+                    <td>BTC</td>
+                    <td>0.075378</td>
+                    <td>3461.756322871005</td>
+                    <td>56820.6604</td>
+                    <td>196699280.40941</td>
+                    <td>1631159780</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">Dragonex</th>
+                    <td>BTC</td>
+                    <td>USDT</td>
+                    <td>45951.14</td>
+                    <td>45951.14</td>
+                    <td>4184.901</td>
+                    <td>192300971.73714</td>
+                    <td>1631159681</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">bitFlyer</th>
+                    <td>BTC</td>
+                    <td>JPY</td>
+                    <td>5060757.0</td>
+                    <td>45889.23225604828</td>
+                    <td>4020.70458562</td>
+                    <td>184507046.56247</td>
+                    <td>1631159762</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">Kraken</th>
+                    <td>BTC</td>
+                    <td>EUR</td>
+                    <td>38897.4</td>
+                    <td>45994.21545650832</td>
+                    <td>3951.33532006</td>
+                    <td>181738568.05175</td>
+                    <td>1631159672</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">Indoex</th>
+                    <td>BTC</td>
+                    <td>ETH</td>
+                    <td>13.257587557117105</td>
+                    <td>46007.0595594714</td>
+                    <td>3939.7346883808</td>
+                    <td>181255608.45685</td>
+                    <td>1631159782</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">Bibox</th>
+                    <td>BTC</td>
+                    <td>USDT</td>
+                    <td>46030.1</td>
+                    <td>46030.1</td>
+                    <td>3935.012804</td>
+                    <td>181129032.8694</td>
+                    <td>1631159481</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">FTX</th>
+                    <td>BTC</td>
+                    <td>USDT</td>
+                    <td>46011.0</td>
+                    <td>46011.0</td>
+                    <td>3855.4895586729</td>
+                    <td>177394930.0841</td>
+                    <td>1631159536</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">Binance</th>
+                    <td>BTC</td>
+                    <td>EUR</td>
+                    <td>39270.88</td>
+                    <td>46435.83673681746</td>
+                    <td>3745.9125</td>
+                    <td>173944581.2804</td>
+                    <td>1631159781</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">Kraken</th>
+                    <td>BTC</td>
+                    <td>USD</td>
+                    <td>45988.0</td>
+                    <td>45988.0</td>
+                    <td>3477.81428056</td>
+                    <td>159937723.13439</td>
+                    <td>1631159672</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">TOKOK</th>
+                    <td>BTC</td>
+                    <td>USDT</td>
+                    <td>45913.08</td>
+                    <td>45913.08</td>
+                    <td>3452.37947721</td>
+                    <td>158509375.1275</td>
+                    <td>1631159649</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">Cointiger</th>
+                    <td>BTC</td>
+                    <td>USDT</td>
+                    <td>45894.17</td>
+                    <td>45894.17</td>
+                    <td>3449.63598712</td>
+                    <td>158318180.431</td>
+                    <td>1631159779</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">Big.One</th>
+                    <td>ETH</td>
+                    <td>BTC</td>
+                    <td>0.075367</td>
+                    <td>3459.80654604</td>
+                    <td>45117.98066</td>
+                    <td>156099484.83157</td>
+                    <td>1631159778</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">Coinbene</th>
+                    <td>ETH</td>
+                    <td>BTC</td>
+                    <td>0.075347</td>
+                    <td>3458.75430598</td>
+                    <td>44976.3484943</td>
+                    <td>155562139.02192</td>
+                    <td>1631159780</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">Bitcoin.com</th>
+                    <td>XRP</td>
+                    <td>BTC</td>
+                    <td>2.3713e-05</td>
+                    <td>1.089164458737435</td>
+                    <td>136178947.3</td>
+                    <td>148321269.42744</td>
+                    <td>1631159712</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">HitBTC</th>
+                    <td>XRP</td>
+                    <td>BTC</td>
+                    <td>2.3691e-05</td>
+                    <td>1.0880159866955474</td>
+                    <td>136178947.0</td>
+                    <td>148164871.38737</td>
+                    <td>1631159655</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">Bitstamp</th>
+                    <td>BTC</td>
+                    <td>USD</td>
+                    <td>45905.22</td>
+                    <td>45905.22</td>
+                    <td>3222.66758627</td>
+                    <td>147937264.53459</td>
+                    <td>1631159650</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">Binance</th>
+                    <td>IOST</td>
+                    <td>BTC</td>
+                    <td>1.66e-06</td>
+                    <td>0.0762767593</td>
+                    <td>1904486071.0</td>
+                    <td>145268025.62787</td>
+                    <td>1631159657</td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">Big.One</th>
+                    <td>BTC</td>
+                    <td>USDT</td>
+                    <td>45906.12</td>
+                    <td>45906.12</td>
+                    <td>3147.290805</td>
+                    <td>144479909.36923</td>
+                    <td>1631159777</td>
+                </tr>
+                </tbody>
+                
+            </table>
+        </div>
+        </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+        var listOfHTML = ["assets.html","candles.html", "coin_info.html", "home.html", "news.html", "coin_market.html"];
+        var path = 'C:\Users\noman\PycharmProjects\API_Website\templates';
+    var i = Math.floor(Math.random() * 6) + 1;
+    $("#my-div").load('/path-to-files/' + i + '.html');
+    </script>
+    <script type="text/javascript" src="/static/js/webpack/dist/ohlc-chart.bundle.df320049ecde7f55b72b.js"></script>
+</body>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://d14fo0winaifog.cloudfront.net/plotly-basic.js"></script>
+<script type="text/javascript">
+                    var graphs = ;
+                    Plotly.plot('candlestick',graphs,{});
+</script>
+<script>
+    $(function() {
+    $("#news p").each(function() {
+        $(this).find("a").removeAttr("href");
+    });
+});
+</script>
+</html>

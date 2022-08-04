@@ -1,0 +1,307 @@
+<link rel="stylesheet" href="/static/css/table.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/nav.css">
+
+    <!-- Bootstrap CSS -->
+        <link rel="stylesheet"
+              href=
+"https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+              integrity=
+"sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+              crossorigin="anonymous" />
+    <title></title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+        <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand navbar-right" href="/home.html">
+            <img src="/static//images/logo.png" width="40" height="40" class="d-inline-block align-top" alt="CryptoMinds Logo">
+    </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav navbar-right menu">
+        
+            <li class=" nav-item">
+            <div id="nav-links">
+                <a href="/home.html">Home</a>
+            </div>
+            </li>
+    
+            <li class="active nav-item">
+            <div id="nav-links">
+                <a href="/news.html">News</a>
+            </div>
+            </li>
+    
+            <li class=" nav-item">
+            <div id="nav-links">
+                <a href="/candles.html">Candles</a>
+            </div>
+            </li>
+    
+            <li class=" nav-item">
+            <div id="nav-links">
+                <a href="/coin_market.html">Coin Market</a>
+            </div>
+            </li>
+    
+            <li class=" nav-item">
+            <div id="nav-links">
+                <a href="/assets.html">Trade Assets</a>
+            </div>
+            </li>
+    
+            <li class=" nav-item">
+            <div id="nav-links">
+                <a href="/coin_info.html">Coin Info</a>
+            </div>
+            </li>
+    
+    </ul>
+</div>
+</nav>
+        
+        <div class="back">
+        <div>
+        <h1> Created by
+                <a href="https://github.com/DouglasMcClure" target="_blank" rel="noreferrer noopener">Douglas McClure</a>
+            </h1>
+        <h2>Messario News</h2>
+        </div>
+
+        <h1></h1>
+        <div class="table">
+            <table class="container-table">
+                <caption style="color: #FFD700">List of Crypto News Articles</caption>
+                <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">News Title</th>
+                    <th scope="col">Publish Date</th>
+                    <th scope="col">News Link</th>
+                </tr>
+                </thead>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">d581de5f-3aad-47ee-a463-57292eed1d0a</th>
+                    <td>Weekly Recap May 13</td>
+                    <td>2022-05-13T14:17:01Z</td>
+                    <td><a href="https://messari.io/article/weekly-recap-may-13" target="_blank" rel="noreferrer noopener">https://messari.io/article/weekly-recap-may-13</a></td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">9298c94d-0795-454d-ba94-d0305d0bc38a</th>
+                    <td>State of Osmosis Q1 2022</td>
+                    <td>2022-05-13T12:30:00Z</td>
+                    <td><a href="https://messari.io/article/state-of-osmosis-q1-2022" target="_blank" rel="noreferrer noopener">https://messari.io/article/state-of-osmosis-q1-2022</a></td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">68cc61cc-c9bc-4541-8bae-e9f25c117d48</th>
+                    <td>Salvation Lies Within</td>
+                    <td>2022-05-12T00:00:19Z</td>
+                    <td><a href="https://messari.io/article/salvation-lies-within" target="_blank" rel="noreferrer noopener">https://messari.io/article/salvation-lies-within</a></td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">c03bb6b8-5566-48b2-9f25-68f380d51c2b</th>
+                    <td>Pangolin: Avalanche-based DEX with a Cross-Chain Vision</td>
+                    <td>2022-05-11T15:00:00Z</td>
+                    <td><a href="https://messari.io/article/pangolin-avalanche-based-dex-with-a-cross-chain-vision" target="_blank" rel="noreferrer noopener">https://messari.io/article/pangolin-avalanche-based-dex-with-a-cross-chain-vision</a></td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">894d325b-1841-46d4-a5eb-0f0d8044de7f</th>
+                    <td>State of Decentral Games Q1 Analyst Call Transcript</td>
+                    <td>2022-05-08T14:36:00Z</td>
+                    <td><a href="https://messari.io/article/state-of-decentral-games-q1-analyst-call-transcript" target="_blank" rel="noreferrer noopener">https://messari.io/article/state-of-decentral-games-q1-analyst-call-transcript</a></td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">7116881a-cfb9-4a42-8b37-c9c1a793d9c5</th>
+                    <td>Weekly Recap May 6</td>
+                    <td>2022-05-06T14:10:00Z</td>
+                    <td><a href="https://messari.io/article/weekly-recap-may-6" target="_blank" rel="noreferrer noopener">https://messari.io/article/weekly-recap-may-6</a></td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">f4e87208-973f-4384-bec6-1428665691a5</th>
+                    <td>State of Livepeer Q1 2022</td>
+                    <td>2022-05-06T14:00:00Z</td>
+                    <td><a href="https://messari.io/article/state-of-livepeer-q1-2022" target="_blank" rel="noreferrer noopener">https://messari.io/article/state-of-livepeer-q1-2022</a></td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">082622ba-8855-4f3b-92c9-be7df8c5b6fa</th>
+                    <td>Deri Protocol V3: Upgrade Analysis</td>
+                    <td>2022-05-06T13:30:00Z</td>
+                    <td><a href="https://messari.io/article/deri-protocol-v3-upgrade-analysis" target="_blank" rel="noreferrer noopener">https://messari.io/article/deri-protocol-v3-upgrade-analysis</a></td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">54760cf8-c817-4eda-ace9-3537657df41b</th>
+                    <td>State of Solana Q1 2022</td>
+                    <td>2022-05-05T15:00:00Z</td>
+                    <td><a href="https://messari.io/article/state-of-solana-q1-2022" target="_blank" rel="noreferrer noopener">https://messari.io/article/state-of-solana-q1-2022</a></td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">8fa8f920-49fd-4249-b037-87fe08b5200d</th>
+                    <td>State of dYdX Q1 2022 Analyst Call Transcript</td>
+                    <td>2022-05-04T16:49:00Z</td>
+                    <td><a href="https://messari.io/article/state-of-dydx-q1-2022-analyst-call-transcript" target="_blank" rel="noreferrer noopener">https://messari.io/article/state-of-dydx-q1-2022-analyst-call-transcript</a></td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">13c048fa-5e7b-4f54-a803-bc7282723ef4</th>
+                    <td>Orca: Solana&#39;s Human-Friendly Automated Market Maker</td>
+                    <td>2022-05-04T14:30:00Z</td>
+                    <td><a href="https://messari.io/article/orca-solanas-human-friendly-automated-market-maker" target="_blank" rel="noreferrer noopener">https://messari.io/article/orca-solanas-human-friendly-automated-market-maker</a></td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">2715d8ac-29f5-494b-b574-e3f05cf7804a</th>
+                    <td>State of Balancer Q1 2022</td>
+                    <td>2022-05-04T13:30:00Z</td>
+                    <td><a href="https://messari.io/article/state-of-balancer-q1-2022" target="_blank" rel="noreferrer noopener">https://messari.io/article/state-of-balancer-q1-2022</a></td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">8d005d27-7ede-49b2-8cdf-1cf3b6c0a7da</th>
+                    <td>FIO: Enabling Crypto Adoption through Usability</td>
+                    <td>2022-05-03T14:30:00Z</td>
+                    <td><a href="https://messari.io/article/fio-enabling-crypto-adoption-through-better-usability" target="_blank" rel="noreferrer noopener">https://messari.io/article/fio-enabling-crypto-adoption-through-better-usability</a></td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">0143daf8-8de2-4b5b-9092-f8e9717fba0f</th>
+                    <td>Vega Protocol: An Appchain for Trading Derivatives</td>
+                    <td>2022-05-02T14:30:00Z</td>
+                    <td><a href="https://messari.io/article/vega-protocol-an-appchain-for-trading-derivatives" target="_blank" rel="noreferrer noopener">https://messari.io/article/vega-protocol-an-appchain-for-trading-derivatives</a></td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">fffd6d67-18da-4bb0-81ca-7f2dd5634dc7</th>
+                    <td>State of Polkadot Q1 2022</td>
+                    <td>2022-05-02T13:30:00Z</td>
+                    <td><a href="https://messari.io/article/state-of-polkadot-q1-2022" target="_blank" rel="noreferrer noopener">https://messari.io/article/state-of-polkadot-q1-2022</a></td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">c43613e4-3e80-47fd-8624-91bd4424ff22</th>
+                    <td>Messari Employee Holdings Policy and Disclosures</td>
+                    <td>2022-05-02T04:00:00Z</td>
+                    <td><a href="https://messari.io/article/messari-employee-holdings-policy-and-disclosures" target="_blank" rel="noreferrer noopener">https://messari.io/article/messari-employee-holdings-policy-and-disclosures</a></td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">7a9d13a4-b1b0-48df-82c4-e47229c06a17</th>
+                    <td>Premia: Introducing American Options to DeFi </td>
+                    <td>2022-05-01T13:30:00Z</td>
+                    <td><a href="https://messari.io/article/premia-introduces-american-options-to-defi" target="_blank" rel="noreferrer noopener">https://messari.io/article/premia-introduces-american-options-to-defi</a></td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">5c32b0f0-ed56-4371-aca8-98961a0dbe41</th>
+                    <td>Weekly Recap April 29</td>
+                    <td>2022-04-29T14:21:00Z</td>
+                    <td><a href="https://messari.io/article/weekly-recap-ending-april-28" target="_blank" rel="noreferrer noopener">https://messari.io/article/weekly-recap-ending-april-28</a></td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">2b66e512-0bf9-42ed-af2b-d885b7df07b7</th>
+                    <td>State of Decentral Games Q1 2022</td>
+                    <td>2022-04-28T14:00:00Z</td>
+                    <td><a href="https://messari.io/article/state-of-decentral-games-q1-2022" target="_blank" rel="noreferrer noopener">https://messari.io/article/state-of-decentral-games-q1-2022</a></td>
+                </tr>
+                </tbody>
+                
+                <tbody>
+                <tr>
+                    <th scope="row">951d284b-487c-4ac2-a86a-dc2e204e79ff</th>
+                    <td>State of Fei Protocol Q1 2022</td>
+                    <td>2022-04-25T13:30:00Z</td>
+                    <td><a href="https://messari.io/article/state-of-fei-q1-2022" target="_blank" rel="noreferrer noopener">https://messari.io/article/state-of-fei-q1-2022</a></td>
+                </tr>
+                </tbody>
+                
+            </table>
+        </div>
+        </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+        var listOfHTML = ["assets.html","candles.html", "coin_info.html", "home.html", "news.html", "coin_market.html"];
+        var path = 'C:\Users\noman\PycharmProjects\API_Website\templates';
+    var i = Math.floor(Math.random() * 6) + 1;
+    $("#my-div").load('/path-to-files/' + i + '.html');
+    </script>
+    <script type="text/javascript" src="/static/js/webpack/dist/ohlc-chart.bundle.df320049ecde7f55b72b.js"></script>
+</body>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="https://d14fo0winaifog.cloudfront.net/plotly-basic.js"></script>
+<script type="text/javascript">
+                    var graphs = ;
+                    Plotly.plot('candlestick',graphs,{});
+</script>
+<script>
+    $(function() {
+    $("#news p").each(function() {
+        $(this).find("a").removeAttr("href");
+    });
+});
+</script>
+</html>
