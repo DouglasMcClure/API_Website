@@ -4,6 +4,7 @@ import plotly
 import plotly.graph_objects as go
 from flask import Flask, render_template
 from flask_navigation import Navigation
+from flask import Response
 
 
 def setup_app(test_config=None):
@@ -25,25 +26,25 @@ def setup_app(test_config=None):
         return conn
 
     # Call/Collect data from all database tables
-    @app.route('/')
+    @app.route('/home.html')
     def home():
-        return render_template('home.html')
+        return Response(render_template('home.html'), content_type='text/html; charset=utf-8')
 
-    @app.route('/news')
+    @app.route('/news.html')
     def messario_news():
         conn = get_db_connection()
         posts = conn.execute('SELECT * FROM messario_news').fetchall()
         conn.close()
-        return render_template('news.html', posts=posts)
+        return Response(render_template('news.html', posts=posts), content_type='text/html; charset=utf-8')
 
-    @app.route('/coin_info')
+    @app.route('/coin_info.html')
     def cryptocompare_coin_info():
         conn = get_db_connection()
         posts = conn.execute('SELECT * FROM cryptocompare_coin_info').fetchall()
         conn.close()
-        return render_template('coin_info.html', posts=posts)
+        return Response(render_template('coin_info.html', posts=posts), content_type='text/html; charset=utf-8')
 
-    @app.route('/candles')
+    @app.route('/candles.html')
     def finnhub_candles():
         conn = get_db_connection()
         df = pd.read_sql_query('SELECT * FROM finnhub_candles', conn)
@@ -60,21 +61,21 @@ def setup_app(test_config=None):
 
         plotly.offline.plot(fig, include_plotlyjs=False, output_type='div')
         conn.close()
-        return render_template('candles.html')
+        return Response(render_template('candles.html'), content_type='text/html; charset=utf-8')
 
-    @app.route('/coin_market')
+    @app.route('/coin_market.html')
     def coinlore_coin_market():
         conn = get_db_connection()
         posts = conn.execute('SELECT * FROM coinlore_coin_market').fetchall()
         conn.close()
-        return render_template('coin_market.html', posts=posts)
+        return Response(render_template('coin_market.html', posts=posts), content_type='text/html; charset=utf-8')
 
-    @app.route('/assets')
+    @app.route('/assets.html')
     def trade_assets():
         conn = get_db_connection()
         posts = conn.execute('SELECT * FROM trade_assets').fetchall()
         conn.close()
-        return render_template('assets.html', posts=posts)
+        return Response(render_template('assets.html', posts=posts), content_type='text/html; charset=utf-8')
 
     return app
 
